@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,13 @@
     <!--Loop pra mostrar todas as minhas transações-->
     {% for transacao in transacoes %}
     <!-- Listar a transação -->
-        <li>{{ transacao.descricao }} - {{ transacao.data }} - 
-                {{ transacao.valor}} - {{ transacao.categoria}}</li>
+        <li><a href="{% url 'url_update' transacao.id %}">
+            {{ transacao.descricao }} - {{ transacao.data }} - 
+            {{ transacao.valor}} - {{ transacao.categoria}}</a></li>
     {% endfor %}
     </ul>
+
+    <a href="{% url 'url_new'%}">New</a>
     
 </body>
 </html>
